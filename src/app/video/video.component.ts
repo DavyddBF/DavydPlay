@@ -19,6 +19,6 @@ export class VideoComponent {
   constructor(private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
-    this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.dadosRecebidos.url)
+    this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.dadosRecebidos.url);
   }
 }
