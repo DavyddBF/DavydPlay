@@ -1,5 +1,5 @@
 <section>
     <ul class="videos__container" alt="videos alura" data-lista>
-        <app-video></app-video>
+        <app-video *ngFor="let dadosDoPai of videosListaFiltrados" [dadosRecebidos]="dadosDoPai"></app-video>
     </ul>
 </section>
