@@ -1,8 +1,15 @@
 <li class="videos__item">
-    <!-- <iframe width="100%" height="72%" src="${url}" title="${titulo}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" 
+        height="72%" 
+        [src]="videoURL" 
+        [title]="dadosRecebidos.titulo" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+    ></iframe>
     <div class="descricao-video">
-        <img src="${imagem}">
-        <h3>${titulo}</h3>
-        <p>${descricao}</p>
-    </div> -->
+        <img [src]="dadosRecebidos.imagem">
+        <h3>{{ dadosRecebidos.titulo }}</h3>
+        <p>{{ dadosRecebidos.descricao }}</p>
+    </div>
 </li>
