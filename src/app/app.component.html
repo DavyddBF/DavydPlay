@@ -1,6 +1,6 @@
 <header>
     <nav class="cabecalho">
-        <a class="logo" href="#"><img src="../../favicon.ico" alt="Ícone">DavydPlay</a>
+        <a [routerLink]="['']" class="logo" href="#"><img src="../favicon.ico" alt="Ícone">DavydPlay</a>
 
         <div class="cabecalho__pesquisar">
             <input type="search" placeholder="Pesquisar" id="pesquisar" class="pesquisar__input" data-pesquisa>
@@ -12,7 +12,9 @@
         </div>
     </nav>
 </header>
-<app-main></app-main>
+<main>
+    <router-outlet></router-outlet>
+</main>
 <footer>
     <p class="footer__descricao">&copy; Aplicação criada por - &#64; davydferreira.js</p>
 </footer>
