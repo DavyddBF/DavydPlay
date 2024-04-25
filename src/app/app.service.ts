@@ -7,17 +7,17 @@ export class AppService {
 
   api: string = 'http://localhost:3000/videos';
 
-  async listaVideos() {
+  async listaVideos(): Promise<any> {
     const apiGET: Response = (await fetch(this.api));
     return await apiGET.json();
-}
+  }
 
-  async buscaVideos(termoBuscado: string) {
+  async buscaVideos(termoBuscado: string): Promise<any> {
     const apiBusca = await fetch(`${this.api}?q=${termoBuscado}`);
     return await apiBusca.json();
   }
 
-  async criaVideo(titulo: string, descricao: string, url: string, imagem: string) {
+  async criaVideo(titulo: string, descricao: string, url: string, imagem: string): Promise<any> {
     const apiPOST: Response = await fetch(this.api, {
         method: "POST",
         headers: {
@@ -33,4 +33,6 @@ export class AppService {
 
     return await apiPOST.json();
   }
+
+
 }
