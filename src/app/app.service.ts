@@ -13,7 +13,7 @@ export class AppService {
 }
 
   async buscaVideos(termoBuscado: string) {
-    const apiBusca = await fetch(`http://localhost:3000/videos?q=${termoBuscado}`);
+    const apiBusca = await fetch(`${this.api}?q=${termoBuscado}`);
     return await apiBusca.json();
   }
 
@@ -30,7 +30,7 @@ export class AppService {
             imagem: imagem
         }),
     });
-    
+
     return await apiPOST.json();
   }
 }
