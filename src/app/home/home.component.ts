@@ -25,7 +25,16 @@ export class HomeComponent {
     this.videosService.listaVideos().then((lista: Cardvideos[]) => {
       this.videosLista = lista;
       this.videosListaFiltrados = lista;
-      console.log(this.videosListaFiltrados)
+      this.limpaTerminal(15); // Parâmetro é os segundos em que será executado esse comando
     });
   }
+
+  limpaTerminal(tempo: number):void {
+    setInterval((): void => {
+      console.clear();
+      console.log('Terminal limpo :)');
+    }, 1000 * tempo); 
+  }
+
+  
 }
