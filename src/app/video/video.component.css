@@ -1,7 +1,7 @@
 .videos__item {
     flex-grow: 1;
-    height: 303px;
-    width: 300px;
+    height: 250px;
+    width: 280px;
 }
 
 .descricao-video {
