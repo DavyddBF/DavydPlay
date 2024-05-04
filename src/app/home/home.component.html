@@ -1,9 +1,9 @@
 <section>
     <div class="barra__pesquisa">
-        <button>
+        <button (click)="buscarVideos($event)">
             <img src="../../assets/img/cabecalho/search.png" alt="icone de pesquisa">
         </button>
-        <input type="text">
+        <input type="text" data-pesquisa />
     </div>
     <ul class="videos__container" alt="videos alura" data-lista>
         <app-video *ngFor="let dadosDoPai of videosListaFiltrados" [dadosRecebidos]="dadosDoPai"></app-video>
