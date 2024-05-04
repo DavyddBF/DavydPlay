@@ -29,13 +29,15 @@ export class HomeComponent {
     });
   }
 
-  async buscarVideos(eventoClick: Event) {
-    eventoClick.preventDefault();
+  buscarVideos(texto: string): void {
+    if(!texto) {
+      this.videosListaFiltrados = this.videosLista;
+      return;
+    }
 
-    const inputPesquisa: string = (<HTMLInputElement> document.querySelector('[data-pesquisa]')).value;
-    const dados: Cardvideos[] = await this.videosService.buscaVideos(inputPesquisa);
-    console.log(dados);
-    this.videosListaFiltrados = dados;
+    this.videosListaFiltrados = this.videosLista.filter(cadaListaVideo => {
+      return cadaListaVideo?.titulo.toLocaleLowerCase().includes(texto.toLocaleLowerCase());
+    })
   }
 
   limpaTerminal(tempo: number):void {
