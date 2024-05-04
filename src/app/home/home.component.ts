@@ -29,6 +29,15 @@ export class HomeComponent {
     });
   }
 
+  async buscarVideos(eventoClick: Event) {
+    eventoClick.preventDefault();
+
+    const inputPesquisa: string = (<HTMLInputElement> document.querySelector('[data-pesquisa]')).value;
+    const dados: Cardvideos[] = await this.videosService.buscaVideos(inputPesquisa);
+    console.log(dados);
+    this.videosListaFiltrados = dados;
+  }
+
   limpaTerminal(tempo: number):void {
     setInterval((): void => {
       console.clear();
